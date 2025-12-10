@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Lingkaran</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        label { display: block; margin-top: 10px; }
+        input { padding: 6px; margin-top: 5px; }
+        #hasil { margin-top: 15px; font-weight: bold; }
+        button { margin-top: 10px; padding: 8px 12px; }
+    </style>
+</head>
+<body>
+
+    <h2>Hitung Luas dan Keliling Lingkaran</h2>
+
+    <label for="r">Masukkan Jari-jari (r):</label>
+    <input type="number" id="r" placeholder="">
+    <button onclick="hitung()">Hitung</button>
+
+    <div id="hasil"></div>
+
+    <script>
+        function hitung() {
+            let r = document.getElementById("r").value;
+            if (r === "") {
+                document.getElementById("hasil").innerHTML = "Masukkan jari-jari terlebih dahulu!";
+                return;
+            }
+            r = parseFloat(r);
+            let luas = Math.PI * r * r;
+            let keliling = 2 * Math.PI * r;
+            document.getElementById("hasil").innerHTML = 
+                "Luas Lingkaran = " + luas.toFixed(2) + "<br>" +
+                "Keliling Lingkaran = " + keliling.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
